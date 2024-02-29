@@ -1,0 +1,498 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    list-style: none;/*убали точки у списка*/
+}
+li{
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+body{    
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #131313;
+    line-height: 17px;
+    
+
+}
+.header__container{
+    
+    max-width: 1220px;/*соответственно тут у нас доабвляется 10px*2 => 1200+20px*/
+    padding: 0 10px;/*мы берем слева-справа по 10px, чтобы не прилегало к краям - некрасиво*/
+    margin:0 auto 97px auto; 
+}
+.header__container-inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__menu{
+    margin:0 70px 0 0;
+    display: flex;
+    
+}
+.header__menu-list + .header__menu-list{/*ищет .name(header__menu) + его соседа .name, и добавляет свойство ниже. А когда не находит, то все гг*/
+    padding-left: 10px;
+}
+.header__menu-link{
+    text-transform: uppercase;
+    padding: 0 20px;/*сюда добавляем отступ, чтобы снизу добавить столько же, когда наводимся, и все не двигалось*/
+    transition: all .3s;/*добавили плавности при наведении на ссылки*/
+}
+.header__menu-link:hover{/*сделали чтобы при наведении на ссылку хедера, менялся бг у букв и их цвет*/
+    background-color: #131313;
+    padding: 45px 20px;
+    color:white;
+}
+.bike__container{
+    display: flex;
+    justify-content: space-between;
+    gap: 31px;
+    max-width: 1220px;
+    padding: 0 10px;
+    margin: 0 auto 150px auto;
+}
+.bike__container-left{
+    max-width: 539px;
+}
+.bike__title{
+    margin: 170px 0 15px 0;
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 77px;
+}
+.bike__subtitle{
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 39px;
+    color: #6F6F6F;
+    margin:0 0 60px 0;
+}
+.bike__text{
+    max-width: 420px;
+    margin:0 0 20px 0;
+}
+
+
+.bike__link{
+    transition: all .3s;
+    text-transform: uppercase;
+    margin-top: 80px;
+    display: inline-block;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+    color: white;
+    padding: 28px 81px;
+    background-color: #131313;
+    letter-spacing: 1.1em;
+}
+.bike__link:hover{
+    background-color: #FF4040;
+}
+.bike__container-right{
+    max-width: 630px;
+}
+.bike-slider-item{
+    max-width: 630px;
+    object-fit: cover;
+}
+
+
+.bike__container-slider .slick-dots{/*работаем по координатам*/
+    right: 0;/*сказали, что справа отступ 0 => переместили их направо*/
+    top: 52px;/*сказали точкам, что сверху отступ 52*/
+}
+.slick-dots{/*обращайемся к классу, тк хотим поменять точки с 1-n на свой дизайн*/
+    position: absolute;/*Элемент исчезает с того места, где он должен быть и позиционируется заново. Остальные элементы, располагаются так, как будто этого элемента никогда не было*/
+
+}
+.slick-dots li + li{
+    padding-top: 10px;
+}
+.slick-dots button{/*стилизуем кнопки в то как на макете / класс button тк в "показать код" можно посмотреть*/
+    font-size: 0;
+    padding: 0;
+    border: none;
+    background-color: #131313;
+    width: 3px;
+    height: 25px;
+    opacity: 0.9;
+    cursor: pointer;/*когда курсор наводится, то появляется палец*/
+    transition: all .3s;
+    border-radius: 3px;
+    
+}
+.slick-dots button:hover,
+.slick-active button{/*горит та кнопка, на каком слайде показывает картинка*/
+    background-color: #FF4040;
+}
+.bike__list{
+    margin: 25px 0 0 0;
+    display: flex;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    justify-content: space-around;/*выравнивает */
+    
+}
+.bike__list-item{
+    text-align: center;
+    align-items: center;
+    min-width: 160px;
+    flex-direction: column;
+    display: flex;
+    min-height: 58px;
+    
+}
+.bike__list-text{
+   
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: lowercase;
+    margin: auto 0;/*выравниваем тест по центру по оси Y*/
+    
+    
+}
+.container{
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.about__container{
+    display: flex;
+    gap: 60px;
+    margin: 0 0 150px 0;
+}
+.about__title{
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+.about__text{
+    max-width: 450px;
+}
+.characteristic__about-text{
+    max-width: 450px;
+    margin: 0 0 5px 0;
+}
+.characteristic__about-text + .characteristic__about-text{
+    margin: 0 0 0 180px;
+}
+.about__list-item + .about__list-item{
+    margin-top: 50px;
+}
+.characteristic{
+    margin-bottom: 150px;
+}
+.characteristic__title{
+    margin: 0 0 40px 0;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.characteristic__inner{
+    align-items: center;
+    display: flex;
+    gap: 60px;
+}
+.characteristic__img{
+    align-self: center;
+}
+.characteristic__items{
+    max-width: 570px;
+}
+.characteristic__list + .characteristic__list{
+    margin-top: 30px;
+}
+.characteristic__head{
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    
+    font-weight: 700;
+    padding: 2px;
+    background-color: #131313;
+    margin: 0 0 10px 0;
+}
+.characteristic__line{
+    display: flex;
+    padding-top: 5px;
+}
+.characteristic__name{
+    padding-right: 25px/*чтобы не "поцеловались" левые слова с правыми*/;
+    margin: 0;
+    flex-basis: 285px;/*добавляет бокс, за который не смогут перейти элементы вне его*/
+}
+.characteristic__descr
+{
+    margin: 0;
+    flex-basis: 285px;/*добавляет бокс, за который не смогут перейти элементы вне его*/
+}
+.container__slider-item .slick-dots{/*работаем по координатам*/
+    left: 0;/*сказали, что справа отступ 0 => переместили их направо*/
+    top: 0px;/*сказали точкам, что сверху отступ 0 => переместили вверх*/
+}
+.slider{
+    margin: 0 0 50px 0;
+}
+.slider__img{
+    margin: 0 0 0 50px;
+}
+.price{
+    margin: 0 0 100px 0;
+}
+.form{
+    max-width: 420px;
+}
+.price__inner{
+    position: relative;
+}
+.form__title{
+    margin: 0 0 40px 0;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+}
+.form__text{
+    max-width: 298px;
+    margin: 0 0 40px 0;
+    font-size: 14px;
+
+}
+.form__input-name,
+.form__input-phone{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #131313;/*как бы делаем линию снизу через обводку*/
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    outline: none;/*откключили обводку при клике на поля имени/телефона*/
+}
+.form__input-name::placeholder, /*меняем вид слов "имя" "телефон"*/
+.form__input-phone::placeholder,
+.form__text-color{
+    color: #6F6F6F;
+    opacity: 0.5;
+}
+.form__text-color{
+    margin-bottom: 10px;
+}
+.form__label-box{
+    display: flex;
+    margin-bottom: 50px;
+
+}
+.form__label + .form__label{
+    margin-left: 23px;
+}
+.form__input-radio{/*убираем круглые "выбиратели" chekbox*/
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);/*чтобы нельзя было по ним кликнуть - область отсутствия 0*/
+}
+.form__input-radio:checked + .form__bike{
+    display: block;
+}
+.form__bike{/*тут мы располагам велик на странице относительно класса price__inner, который выше*/
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+.form__bike-price{
+    position: absolute;
+    top: 30px;
+    right: 0;
+    left: 0;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 100px;
+    border: 1px solid #FF4040;
+    border-radius: 100%;
+    transform: translateX(-50%);/*двигает по осиХ */
+
+}
+.form__bike-price::after{
+    content: "";
+    position: absolute;
+    width: 220px;
+    height: 100px;
+    border: 1px solid #FF4040;
+    border-radius: 100%;
+    top: 8px;
+    left: 0;
+}
+.form__radio-style{/*стайлим кнопочки*/
+    
+    width: 80px;
+    height: 12px;
+    border-radius: 30px;
+    
+    
+}
+.form__radio-style--grey{
+    background-color: #6f6f6f;
+    cursor: pointer;
+}
+.form__radio-style--white{
+    background-color: #fff;
+    border: 1px solid #6F6F6F;
+    cursor: pointer;
+}
+.form__radio-style--red{
+    background-color: #FF4040;
+    cursor: pointer;
+}
+.form__btn{
+    padding: 28px 71px 28px 81px;
+    background-color: #131313;
+    color: #fff;
+    border: none;
+    letter-spacing: 1.1em;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 24px;
+    cursor: pointer;
+}
+.form__btn:hover{
+    background-color: #FF4040;
+    transition: all .3s;
+}
+.footer{
+    background-color: #131313;
+    height: 100px;
+}
+.footer__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+.footer__link{
+    text-decoration:underline;
+    font-size: 12px;
+    color: #fff;
+    text-transform: lowercase;
+}
+.footer__social{
+    display: flex;
+    gap: 28px;
+}
+.footer__contacts{
+    width: 184px;
+}
+.footer__contacts-link{
+    display: flex;
+    font-size: 12px;
+    color: #fff;
+    text-transform: lowercase;
+    align-items: center;
+    gap: 10px;
+    
+}
+.tel + .mail{
+    margin-top: 19px;    
+}
+.tel::before{
+    
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(img/tel.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+.mail::before{
+    
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(img/mail.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+}
+@media (max-width: 1155px) {
+    .bike__container{
+        display: block;
+    }
+    .bike__container-left{
+        max-width: none;
+    }
+    .bike__title{
+        margin-top: 100px;
+        font-size: 80px;
+    }
+    .bike__subtitle{
+        font-size: 34px;
+    }
+    .bike__text{
+        font-size: 16px;
+        max-width: none;
+    }
+    .bike__container-slider{
+        max-width: 100%;
+    }
+    .bike__link{
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .header__menu{
+        margin-right: 0;
+    }
+    .bike__title{
+        font-size: 60px;
+    }
+    .bike__subtitle{
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .header__container-inner{
+        display: block;
+        text-align: center;
+    }
+    .header__menu{
+        justify-content: space-evenly;
+        margin-top: 30px;
+    }
+}
+@media (max-width: 666px) {
+    .bike__list-item{
+        min-width: none;
+    }
+}
+@media (max-width: 500px) {
+    .header__menu-link{
+        padding: 0;
+    }
+}
+@media (max-width: 380px) {
+    .header__menu-link{
+        font-size: 11px;
+    }
+}
